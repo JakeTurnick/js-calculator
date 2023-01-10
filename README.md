@@ -1,3 +1,6 @@
+ONLY NEED TO CREATE A 1 OPERATOR CALCULATOR
+
+
 # Description
 
 The goal is to create a working calculator, identical in functionality to Calculator.app on your Mac.
