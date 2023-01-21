@@ -9,15 +9,21 @@
 
     //collected inputs from user
     let calculation = [];
+    const operators = ['*', '/', '+', '-'];
+    let num1 = '', num2 = '', op = null;
 
     numBtn.forEach(number => {
-        number.addEventListener('click', (e) => {pushNumber(e)})
+        number.addEventListener('click', (e) => {
+            pushNumber(e)
+        })
+    
     });
     //Alerts the number pressed for each number button & adds to calculation
+    let newScreen = '';
     function pushNumber(e) {
         alert(e.target.value);
         calculation.push(e.target.value);
-        screen.value = e.target.value;
+        screen.value += e.target.value;      
     }
 
     
@@ -32,13 +38,11 @@
             console.log(calculation);
             calculation.push(e.target.value);
         } else {
-            console.log('Calc arr:', calculation)
             screen.value = 0;
             calculation = [];
             num1 = '';
             num2 = '';
             op = null;
-            console.log('Calc arr:', calculation)
         }
         
     }
@@ -53,8 +57,7 @@
     equals.addEventListener('click', (e) => {calculate(e)})
 
 
-    const operators = ['*', '/', '+', '-'];
-    let num1 = '', num2 = '', op = null;
+
     function calculate(e) {
         //alert(e.target.value);
         
@@ -74,6 +77,7 @@
             } else {
                 num2 += char
             }
+            
         };
 
         num1 = parseFloat(num1);
